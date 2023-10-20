@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escalação</title>
+    <script src="index.js" defer></script>
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalaize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="margin: 20px; font-family: 'Roboto', sans-serif">
+    <form method="post">
+      <h2>Escalação</h2>
+
+      <text><b>Posição do Jogador</b></text>
+      <br />
+
+      <label for="posicao-1">Defesa</label>
+      <input
+        type="radio"
+        name="posicao"
+        id="posicao-1"
+        value="Defesa"
+        required
+      />
+
+      <br />
+      <label for="posicao-2">Meio de Campo</label>
+      <input type="radio" name="posicao" id="posicao-2" value="Meio de Campo" />
+
+      <br />
+      <label for="posicao-3">Ataque</label>
+      <input type="radio" name="posicao" id="posicao-3" value="Ataque" />
+
+      <br />
+      <br />
+      <label for="nome">Nome do Jogador</label>
+      <input type="text" name="nome" id="nome" required />
+
+      <br />
+      <br />
+      <label for="numero">Número da Camisa</label>
+      <input
+        type="number"
+        name="numero"
+        id="numero"
+        min="1"
+        oninput="this.value = Math.abs(this.value)"
+        required
+      />
+
+      <br />
+      <br />
+      <button type="submit" id="escalar">Escalar Jogador</button>
+    </form>
+
+    <section></section>
+  </body>
+</html>

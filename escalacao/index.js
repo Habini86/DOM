@@ -68,8 +68,9 @@ form.addEventListener("submit", function (event) {
       const numero = document.getElementById("numero-1").value
       const filho = document.getElementById("numero-" + numero)
 
-      if (
-        filho?.parentNode != undefined &&
+      if (filho?.parentNode === undefined) {
+        window.alert("Número inválido!")
+      } else if (
         window.confirm("Deseja desescalar o jogador " + numero + "?")
       ) {
         filho.parentNode.remove()
@@ -82,8 +83,6 @@ form.addEventListener("submit", function (event) {
 
           Array.from(remove).forEach((elemento) => elemento.remove())
         }
-      } else {
-        window.alert("Número inválido!")
       }
     }
 

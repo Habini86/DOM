@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escalação</title>
+    <script src="index.js" defer></script>
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalaize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="margin: 20px; font-family: 'Roboto', sans-serif">
+    <form>
+      <h2>Cadastro de Devs</h2>
+
+      <label for="nome">Nome do Dev</label>
+      <input type="text" name="nome" id="nome" required />
+
+      <br /><br />
+
+      <button type="button">Adicionar Tecnologias</button>
+
+      <br /><br />
+
+      <section>
+        <label for="tecnologia">Nome da Tecnologia</label>
+        <input type="text" name="tecnologia" id="tecnologia" required />
+
+        <br /><br />
+
+        <text><b>Tempo de Experiência</b></text>
+        <br />
+        <label for="experiencia-1">0-2 anos</label>
+        <input
+          type="radio"
+          name="experiencia"
+          id="experiencia-1"
+          value="0-2 anos"
+          required
+        />
+
+        <br />
+        <label for="experiencia-2">3-4 anos</label>
+        <input
+          type="radio"
+          name="experiencia"
+          id="experiencia-2"
+          value="3-4 anos"
+        />
+
+        <br />
+        <label for="experiencia-3">5+ anos</label>
+        <input
+          type="radio"
+          name="experiencia"
+          id="experiencia-3"
+          value="5+ anos"
+        />
+
+        <br />
+        <br />
+
+        <button type="button">Remover Tecnologias</button>
+      </section>
+
+      <br />
+      <br />
+      <button type="submit" id="adicionar">Adicionar Dev</button>
+    </form>
+  </body>
+</html>

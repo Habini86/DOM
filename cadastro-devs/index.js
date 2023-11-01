@@ -23,7 +23,7 @@ btnAdd.addEventListener("click", () => {
   createBr(count)
   createBr(count)
 
-  const text = document.createElement("text")
+  const text = document.createElementNS("text")
   text.textContent = "Tempo de Experiência"
   text.style.fontWeight = "bold"
   text.className = "remove-" + count

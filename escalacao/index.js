@@ -1,7 +1,7 @@
 const form = document.querySelector("form")
 let count = 1
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", (event) => {
   event.preventDefault()
   const posicao = document.querySelector("input[name='posicao']:checked").value
   const nome = document.getElementById("nome").value

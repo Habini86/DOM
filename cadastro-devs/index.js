@@ -5,7 +5,75 @@ let count = 1
 let countDev = 1
 let desenvolvedores = {}
 
+// Eventos
 btnAdd.addEventListener("click", () => {
+  addInputs(count)
+
+  if (count === 1) {
+    const btnRemove = document.createElement("button")
+    btnRemove.type = "button"
+    btnRemove.textContent = "Remover Tecnologias"
+    btnRemove.id = "btn-remove"
+    btnRemove.addEventListener("click", (ev) => removeItens(ev))
+
+    const div = document.querySelector("div")
+    div.appendChild(btnRemove)
+  }
+
+  count++
+})
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault()
+  const nomeDesenvolvedor = document.querySelector("input[name='nome']").value
+  console.log(`Nome do Dev: ${nomeDesenvolvedor}`)
+
+  forAddObject(count)
+  form.reset()
+
+  if (document.getElementById("btn-remove")) {
+    const btnRemove = document.getElementById("btn-remove")
+    btnRemove.remove()
+  }
+
+  console.log(desenvolvedores)
+  count = 1
+  countDev++
+})
+
+
+// Funções auxiliares
+const forAddObject = (count) => {
+  for (let i = 1; i < count; i++) {
+    const btnRemove = document.getElementById("btn-remove")
+    if (!desenvolvedores["Desenvolvedor " + countDev]) {
+      desenvolvedores["Desenvolvedor " + countDev] = { nome: nomeDesenvolvedor }
+    }
+  
+    if (btnRemove) {
+      const nomeTecnologia = document.querySelector(
+        `input[name='tecnologia-${i}']`
+      ).value
+
+      console.log(`Tecnologia ${i}: ${nomeTecnologia}`)
+      const experiencia = document.querySelector(
+        `input[name='experiencia-${i}']:checked`
+      ).value
+
+      console.log(`Experiência: ${experiencia}`)
+
+      desenvolvedores["Desenvolvedor " + countDev][`tecnologia ${i}`] = {
+        nome: nomeTecnologia,
+        tempoExperiencia: experiencia,
+      }
+
+      const remove = document.querySelectorAll(".remove-" + i)
+      Array.from(remove).forEach((element) => {element.remove()})
+    }
+  }
+}
+
+const addInputs = (count) => {
   const label = document.createElement("label")
   label.htmlFor = "tecnologia-" + count
   label.className = "remove-" + count
@@ -82,20 +150,7 @@ btnAdd.addEventListener("click", () => {
 
   createBr(count)
   createBr(count)
-
-  if (count === 1) {
-    const btnRemove = document.createElement("button")
-    btnRemove.type = "button"
-    btnRemove.textContent = "Remover Tecnologias"
-    btnRemove.id = "btn-remove"
-    btnRemove.addEventListener("click", (ev) => removeItens(ev))
-
-    const div = document.querySelector("div")
-    div.appendChild(btnRemove)
-  }
-
-  count++
-})
+}
 
 const removeItens = (ev) => {
   const remove = document.querySelectorAll(".remove-" + (count - 1))
@@ -112,52 +167,3 @@ const createBr = (count) => {
   return (section.appendChild(document.createElement("br")).className =
     "remove-" + count)
 }
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault()
-  const nomeDesenvolvedor = document.querySelector("input[name='nome']").value
-  console.log(`Nome do Dev: ${nomeDesenvolvedor}`)
-
-  const max = count
-  debugger
-  for (let i = 1; i < max; i++) {
-    const btnRemove = document.getElementById("btn-remove")
-    if (!desenvolvedores["Desenvolvedor " + countDev]) {
-      desenvolvedores["Desenvolvedor " + countDev] = { nome: nomeDesenvolvedor }
-    }
-    debugger
-    if (btnRemove) {
-      debugger
-      const nomeTecnologia = document.querySelector(
-        `input[name='tecnologia-${i}']`
-      ).value
-
-      console.log(`Tecnologia ${i}: ${nomeTecnologia}`)
-      const experiencia = document.querySelector(
-        `input[name='experiencia-${i}']:checked`
-      ).value
-
-      console.log(`Experiência: ${experiencia}`)
-
-      desenvolvedores["Desenvolvedor " + countDev][`tecnologia ${i}`] = {
-        nome: nomeTecnologia,
-        tempoExperiencia: experiencia,
-      }
-
-      const remove = document.querySelectorAll(".remove-" + i)
-      Array.from(remove).forEach((element) => {
-        element.remove()
-      })
-    }
-  }
-  form.reset()
-
-  if (document.getElementById("btn-remove")) {
-    const btnRemove = document.getElementById("btn-remove")
-    btnRemove.remove()
-  }
-
-  console.log(desenvolvedores)
-  count = 1
-  countDev++
-})

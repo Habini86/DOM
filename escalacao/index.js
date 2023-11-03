@@ -20,7 +20,7 @@ form.addEventListener("submit", (event) => {
   ul.id = "lista-" + count
   ul.style = "list-style-type: none;"
 
-  const text = document.createElementNS("text")
+  const text = document.createElement("text")
   text.textContent = "Jogador"
   text.style = "font-weight: bold;"
   ul.appendChild(text)

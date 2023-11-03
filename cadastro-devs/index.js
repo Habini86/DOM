@@ -91,10 +91,10 @@ const addInputs = (count) => {
   createBr(count)
   createBr(count)
 
-  const text = document.createElementNS("text")
+  const text = document.createElement("text")
   text.textContent = "Tempo de Experiência"
   text.style.fontWeight = "bold"
-  text.className = "remove-" + count
+  text.classList.add("remove-" + count)
 
   section.append(text)
   createBr(count)

@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px !important;
+  font-family: 'Roboto', sans-serif !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 95vh;
+  justify-content: center;
+  user-select: none;
+  background-color: #e2e2e2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+  margin-top: 35px;
+}
+
+.text-input {
+  background: none;
+  color: #9b9b9b;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #9b9b9b;
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.text-input:focus ~ label,
+.text-input:valid ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: #2196F3;
+}
+
+.text-input:focus ~ .bar:before {
+  width: 320px;
+}
+
+label {
+  color: #9b9b9b;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+
+.bar:before {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #2196F3;
+  transition: 300ms ease all;
+  left: 0%;
+}
+
+.text-input::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.text-input:focus::placeholder {
+  color: #9b9b9b;
+  transition: color 0.5s ease;
+}
+
+#start {
+  width: 40%;
+  margin: 0 auto;
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  height: 37px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#start:active {
+  outline: 0;
+}
+
+#start:hover {
+  outline: 0;
+}
+
+#start span {
+  transition: all 200ms;
+}
+
+#start:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  font-size: 0;
+}
+
+.btn-tic-tac {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  font-size: 16px;
+  border-radius: 0;
+  border: 1px solid;
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .start {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .start span {
+    line-height: 50px;
+  }
+}

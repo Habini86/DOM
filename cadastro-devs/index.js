@@ -28,7 +28,7 @@ form.addEventListener("submit", (event) => {
   const nomeDesenvolvedor = document.querySelector("input[name='nome']").value
   console.log(`Nome do Dev: ${nomeDesenvolvedor}`)
 
-  forAddObject(count)
+  forAddObject(count, nomeDesenvolvedor)
   form.reset()
 
   if (document.getElementById("btn-remove")) {
@@ -43,7 +43,7 @@ form.addEventListener("submit", (event) => {
 
 
 // Funções auxiliares
-const forAddObject = (count) => {
+const forAddObject = (count, nomeDesenvolvedor) => {
   for (let i = 1; i < count; i++) {
     const btnRemove = document.getElementById("btn-remove")
     if (!desenvolvedores["Desenvolvedor " + countDev]) {

@@ -25,40 +25,43 @@
     />
   </head>
   <body>
-    <form style="display: none">
+    <form>
       <div class="group">
         <input type="text" name="name-jogador-1" id="name-1" class="text-input" required placeholder="Jogador 1" autocomplete="off">
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for="name-jogador-1">Insira o nome do Jogador 1: </label>
-      </div>      
+      </div> 
+
       <div class="group">
         <input type="text" name="name-jogador-2" id="name-2" class="text-input" required placeholder="Jogador 2">
         <span class="highlight"></span>
         <span class="bar"></span>
         <label for="name-jogador-2">Insira o nome do Jogador 2: </label>
-      </div>      
+      </div>
+
       <br /> 
-      <button type="submit" role="button" id="start"><span class="text">Start</span></button>
+      <button type="submit" role="button" id="start">
+        <span class="text">Start</span>
+      </button>
     </form>
 
-    <section id="container">
-      <div id="container-linha-1">
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
-      </div>
-      <div id="container-linha-2">
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
-      </div>
-      <div id="container-linha-3">
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
-        <button type="button" class="btn-tic-tac"></button>
+    <section style="display: none">
+      <h1 style="text-align: center;" id="nome-jogador-1">Vez do </h1>
+      <h1 style="text-align: center;" id="nome-jogador-2">Vez do </h1>
+      <div id="grid">
+        <button type="button" class="btn-tic-tac" id="btn-tic-1"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-2"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-3"></button>
+
+        <button type="button" class="btn-tic-tac" id="btn-tic-4"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-5"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-6"></button>
+
+        <button type="button" class="btn-tic-tac" id="btn-tic-7"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-8"></button>
+        <button type="button" class="btn-tic-tac" id="btn-tic-9"></button>
       </div>
     </section>
-    
   </body>
 </html>
